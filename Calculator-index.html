@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Calculator</title>
+  <script src="https://cdnjs.com/libraries/mathjs" defer></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,100&family=Ysabeau:ital,wght@1,300;1,400&display=swap');
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  background: linear-gradient(45deg, #0a0a0a, #3a4452);
+  height: 85vh;
+  padding: 48px;
+  margin-left: -3px;
+}
+
+.calculate {
+  margin-top: 30px;
+  width: 35%;
+  margin-top: 35px;
+  background: transparent;
+  margin-left: 30%;
+  padding: 20px;
+  border: ;
+  border-radius: 16px;
+  background: linear-gradient(45deg, #0a0a0a, #3a4452);
+  box-shadow: 0px 3px 50px rgba(113, 115, 119, 0.5);
+}
+
+table {
+  margin: auto
+}
+
+input {
+  font-size: 40px;
+  border-radius: 9px;
+  text-align: right;
+  border: #fff;
+  background: transparent;
+  box-shadow: 0px, 3px, 15px, rgbs(84, 84, 84, 0.1);
+  margin-top: 8px;
+  color: #ffff;
+  padding: 10px;
+  cursor: pointer;
+}
+
+input::placeholder {
+  color: #ffffff;
+}
+
+button {
+  font-size: 23px;
+  background: transparent;
+  color: white;
+  margin: 3px;
+  margin-top: 10px;
+  width: 75px;
+  height: 75px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: -8px -8px 15px rgba(225, 255, 225, 0.1);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  background-color: #506850;
+  color: white;
+}
+
+.btn {
+  color: #00ff11;
+  font-weight: bold;
+}
+
+.btn1 {
+  background-color: #fb7c14;
+}
+
+.btn2 {
+  color: red;
+}
+
+.btn3 {
+  color: #ffbb00;
+}
+
+@media only screen and (min-width: 1100px) and (max-width: 1510px) {
+  input {
+    font-size: 28px;
+    text-transform: ;
+  }
+
+  button {
+    width: 50px;
+    height: 50px;
+    font-size: small;
+  }
+}
+
+@media only screen and (min-width: 650px) and (max-width: 1100px) {
+  input {
+    font-size: 22px;
+  }
+
+  button {
+    width: 2.5em;
+    height: 2.5em;
+    font-size: small;
+  }
+
+  .calculate {
+    width: 60%;
+    margin-left: 150px;
+  }
+}
+
+@media only screen and (min-width: 520px) and (max-width: 650px) {
+  input {
+    font-size: 18px;
+  }
+
+  button {
+    width: 25px;
+    height: 25px;
+
+    font-size: x-small;
+  }
+
+  .calculate {
+    width: 50%;
+    margin-left: 70px;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 520px) {
+  input {
+    font-size: 15px;
+  }
+
+  button {
+    width: 25px;
+    height: 25px;
+    font-size: xx-small;
+
+  }
+
+  .calculate {
+    width: 65%;
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 400px) {
+  input {
+    font-size: 12px;
+  }
+
+  button {
+    width: 20px;
+    height: 20px;
+    font-size: xx-small;
+
+  }
+
+  .calculate {
+    width: 80%;
+    margin-left: 25px;
+  }
+}
+
+@media only screen and (min-width: 280px) and (max-width: 320px) {
+  input {
+    font-size: 13px;
+  }
+
+  button {
+    width: 24px;
+    height: 24px;
+    font-size: xx-small;
+    margin: 2px;
+  }
+
+  .calculate {
+    width: 98%;
+    margin-left: -12px;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="calculate">
+      <b><input type="text" name="screen" id="screen" placeholder="0"></b>
+      <table>
+
+        <tr>
+          <td><button class="btn3">CE</button></td>
+          <td><button class="btn">x!</button></td>
+          <td><button class="btn">(</button></td>
+          <td><button class="btn">)</button></td>
+          <td><button class="btn">%</button></td>
+          <td><button class="btn2">AC</button></td>
+        </tr>
+
+
+
+        <tr>
+          <td><button class="btn">sin</button></td>
+          <td><button class="btn">π</button></td>
+          <td><button>7</button></td>
+          <td><button>8</button></td>
+          <td><button>9</button></td>
+          <td><button class="btn">X</button></td>
+        </tr>
+
+        <tr>
+          <td><button class="btn">cos</button></td>
+          <td><button class="btn">log</button></td>
+          <td><button>4</button></td>
+          <td><button>5</button></td>
+          <td><button>6</button></td>
+          <td><button class="btn">-</button></td>
+        </tr>
+
+        <tr>
+          <td><button class="btn">tan</button></td>
+          <td><button class="btn">√</button></td>
+          <td><button>1</button></td>
+          <td><button>2</button></td>
+          <td><button>3</button></td>
+          <td><button class="btn">+</button></td>
+        </tr>
+
+        <tr>
+          <td><button class="btn">e</button></td>
+          <td><button class="btn">x^y</button></td>
+          <td><button>0</button></td>
+          <td><button>.</button></td>
+          <td><button>/</button></td>
+          <td><button class="btn1">=</button></td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+
+</body>
+<script>
+  let screen = document.getElementById('screen');
+buttons = document.querySelectorAll('button');
+let screenValue = '';
+for (item of buttons) {
+  item.addEventListener('click', (e) => {
+    buttonText = e.target.innerText;
+    console.log('Button text is ', buttonText);
+    if (buttonText == 'X') {
+      buttonText = '*';
+      screenValue += buttonText;
+      screen.value = screenValue;
+    }
+    else if (buttonText == 'AC') {
+      screenValue = "";
+      screen.value = screenValue;
+    }
+    else if (buttonText == '=') {
+      screen.value = eval(screenValue);
+    }
+    else if (buttonText == 'CE') {
+      screenValue = screenValue.substring(0, screenValue.length - 1);
+      screen.value = screenValue;
+    }
+    else if (buttonText == 'sin') {
+      screen.value = Math.sin(screen.value);
+    }
+    else if (buttonText == 'cos') {
+      screen.value = Math.cos(screen.value);
+    }
+    else if (buttonText == 'tan') {
+      screen.value = Math.tan(screen.value);
+    }
+    else if (buttonText == 'log') {
+      screen.value = Math.log(screen.value);
+    }
+    else if (buttonText == 'π') {
+      let value = screen.value.split("*")[0];
+      console.log(screen.value);
+      console.log(screenValue.value * 3.14159265359);
+      screen.value = value * 3.14159265359;
+    }
+    else if (buttonText == 'e') {
+
+      let value = screen.value.split("*")[0];
+      console.log(screen.value);
+      console.log(screenValue.value * 2.718281828459045);
+      screen.value = value * 2.718281828459045;
+    }
+    else if (buttonText == '√') {
+      screen.value = Math.sqrt(screen.value, 2);
+    }
+    else if (buttonText == 'x^y') {
+      screen.value = Math.pow(screen.value, 2);
+    }
+    else if (buttonText == 'x!') {
+      let i, num, f;
+      f = 1;
+      num = screen.value;
+      for (i = 1; i <= num; i++) {
+        f = f * i;
+      }
+      i = i - 1;
+      screen.value = f;
+    }
+    else {
+      screenValue += buttonText;
+      screen.value = screenValue;
+    }
+
+  })
+}
+
+let expression = "3*6/2+2"
+let operators = ['+', '-', '*', "/", '%'];
+
+let hasOperators = operators.some(operator => expression.includes(operator))
+
+if (expression.includes("/")) {
+  let values = expression.split("/")
+  let left = values[0];
+  let right = values[1];
+  console.log(`${left}/${right} = `, left / right)
+}
+
+console.log("hasOperators: ", hasOperators)
+  </script>
+let screen = document.getElementById('screen');
+buttons = document.querySelectorAll('button');
+let screenValue = '';
+for (item of buttons) {
+  item.addEventListener('click', (e) => {
+    buttonText = e.target.innerText;
+    console.log('Button text is ', buttonText);
+    if (buttonText == 'X') {
+      buttonText = '*';
+      screenValue += buttonText;
+      screen.value = screenValue;
+    }
+    else if (buttonText == 'AC') {
+      screenValue = "";
+      screen.value = screenValue;
+    }
+    else if (buttonText == '=') {
+      screen.value = eval(screenValue);
+    }
+    else if (buttonText == 'CE') {
+      screenValue = screenValue.substring(0, screenValue.length - 1);
+      screen.value = screenValue;
+    }
+    else if (buttonText == 'sin') {
+      screen.value = Math.sin(screen.value);
+    }
+    else if (buttonText == 'cos') {
+      screen.value = Math.cos(screen.value);
+    }
+    else if (buttonText == 'tan') {
+      screen.value = Math.tan(screen.value);
+    }
+    else if (buttonText == 'log') {
+      screen.value = Math.log(screen.value);
+    }
+    else if (buttonText == 'π') {
+      let value = screen.value.split("*")[0];
+      console.log(screen.value);
+      console.log(screenValue.value * 3.14159265359);
+      screen.value = value * 3.14159265359;
+    }
+    else if (buttonText == 'e') {
+
+      let value = screen.value.split("*")[0];
+      console.log(screen.value);
+      console.log(screenValue.value * 2.718281828459045);
+      screen.value = value * 2.718281828459045;
+    }
+    else if (buttonText == '√') {
+      screen.value = Math.sqrt(screen.value, 2);
+    }
+    else if (buttonText == 'x^y') {
+      screen.value = Math.pow(screen.value, 2);
+    }
+    else if (buttonText == 'x!') {
+      let i, num, f;
+      f = 1;
+      num = screen.value;
+      for (i = 1; i <= num; i++) {
+        f = f * i;
+      }
+      i = i - 1;
+      screen.value = f;
+    }
+    else {
+      screenValue += buttonText;
+      screen.value = screenValue;
+    }
+
+  })
+}
+
+let expression = "3*6/2+2"
+let operators = ['+', '-', '*', "/", '%'];
+
+let hasOperators = operators.some(operator => expression.includes(operator))
+
+if (expression.includes("/")) {
+  let values = expression.split("/")
+  let left = values[0];
+  let right = values[1];
+  console.log(`${left}/${right} = `, left / right)
+}
+
+console.log("hasOperators: ", hasOperators)
+</html>
